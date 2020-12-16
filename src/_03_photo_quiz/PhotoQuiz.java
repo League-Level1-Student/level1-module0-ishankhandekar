@@ -35,26 +35,36 @@ public class PhotoQuiz {
 		quizWindow.add(c);
 		// 5. call the pack() method on the quiz window
 		quizWindow.pack();
+		String question = "nothing";
 		// 6. ask a question that relates to the image
-		
+		question = JOptionPane.showInputDialog("What logo is this?");
 		// 7. print "CORRECT" if the user gave the right answer
-
+		if (question.equalsIgnoreCase("Minecraft")) {
+			JOptionPane.showMessageDialog(null, "Correct");
+		}else {
+			JOptionPane.showMessageDialog(null, "Incorrect");
+		}
 		// 8. print "INCORRECT" if the answer is wrong
 
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
-
+		quizWindow.remove(c);
 		// 10. find another image and create it (might take more than one line
 		// of code)
-
+		String url2 = "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cGlhbm98ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
 		// 11. add the second image to the quiz window
-
+		Component b = createImage(url2);
+		quizWindow.add(b);
 		// 12. pack the quiz window
-
+		quizWindow.pack();
 		// 13. ask another question
-
+		question = JOptionPane.showInputDialog("Is b sharp a black key?");
 		// 14+ check answer, say if correct or incorrect, etc.
-
+		if (question.equalsIgnoreCase("No")) {
+			JOptionPane.showMessageDialog(null, "Correct");
+		}else {
+			JOptionPane.showMessageDialog(null, "Incorrect");
+		}
 	}
 
 	private Component createImage(String imageUrl) throws MalformedURLException {
